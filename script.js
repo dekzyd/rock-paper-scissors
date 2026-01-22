@@ -18,4 +18,22 @@ function getComputerChoice (){
     return comChoice;
 }
 
+const getHumanChoice = () => {
+    // Init var humanChoice of type string
+    let humanChoice;
+    // Get user to input options 1 for rock, 2 for paper, 3 for scissors
+    const choice = parseInt(prompt('Type 1 for Rock, 2 for Paper or 3 for Scissors'))
+
+    if (choice === 1) {
+        humanChoice = 'Rock'
+    } else if (choice === 2) {
+        humanChoice = 'Paper'
+    } else {
+        humanChoice = 'Scissors'
+    }
+    //return humanChoice
+    return humanChoice
+}
+
+console.log(getHumanChoice());
 console.log(getComputerChoice());
