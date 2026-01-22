@@ -39,5 +39,55 @@ const getHumanChoice = () => {
     return humanChoice
 }
 
-console.log(getHumanChoice());
-console.log(getComputerChoice());
+function playRound(humanChoice, computerChoice) {
+    const human = humanChoice.toLowerCase()
+    const com = computerChoice.toLowerCase()
+    // If humanChoice equals computerChoice it’s a draw. No points added. End game
+    if(human === com) {
+        console.log("It's a Tie!");
+        
+    }
+    // If humanChoice is Rock and computerChoice isn’t paper, Human wins, else Computer wins. End game.
+    if (human === 'rock') {
+        if (com !== 'paper') {
+            humanScore += 1;
+            console.log('You Win! Rock beats Paper.');
+            
+        } else {
+            computerScore += 1;
+            console.log('You Lose! Paper beats Rock.');
+            
+        }
+    }
+   
+    // If HumanChoice is Paper and computerChoice isn’t scissors, human wins, else Computer wins. End game.
+    if (human === 'paper') {
+        if (com !== 'scissors') {
+            humanScore += 1;
+            console.log('You Win! Paper beats Rock.');
+            
+        } else {
+            computerScore += 1;
+            console.log('You Lose! Scissors beats Paper.');
+             
+        }
+    }
+    // If HumanChoice is Scissors and computerChoice isn’t Rock, human wins, else computer wins. End game.
+    if (human === 'scissors') {
+        if (com !== 'rock') {
+            humanScore += 1;
+            console.log('You Win! Scissors beats Paper.');
+             
+        } else {
+            computerScore += 1;
+            console.log('You Lose! Rock beats Scissors.');
+             
+        }
+    }
+}
+
+const humanChoice = getHumanChoice()
+const computerChoice = getComputerChoice()
+
+playRound(humanChoice, computerChoice);
+
